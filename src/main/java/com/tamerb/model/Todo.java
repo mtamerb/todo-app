@@ -13,17 +13,15 @@ import java.util.Date;
 @Table(name = "todo")
 public class Todo implements Serializable {
 
-    private static final Long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Task is mandatory")
+    @NotBlank(message = "Task cannot be empty")
     @Column(name = "task")
     private String task;
 
-    @Column(name = "completed")
+    @Column(name = "is_completed")
     private Boolean completed = false;
 
     @CreationTimestamp
