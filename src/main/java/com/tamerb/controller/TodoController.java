@@ -25,11 +25,12 @@ public class TodoController {
     private final TodoService todoService;
 
     @PostMapping("create")
-    public ResponseEntity<ApiResponse> createTask(@Valid @RequestBody TodoDTO todoDTO) {
+    public ResponseEntity<List<Todo>> createTask(@Valid @RequestBody TodoDTO todoDTO) {
         Todo todo = new Todo();
         todo.setTask(todoDTO.getTask());
         todoService.createTask(todo);
-        return new ResponseEntity<>(new ApiResponse(true, "Task created successfully"), HttpStatus.CREATED);
+        List<Todo> todos = todoService.listTask();
+        return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
     @GetMapping("read/{taskID}")
@@ -59,18 +60,20 @@ public class TodoController {
     }
 
     @DeleteMapping("delete/{taskID}")
-    public ResponseEntity<ApiResponse> deleteTask(@PathVariable Integer taskID) {
+    public ResponseEntity<List<Todo>> deleteTask(@PathVariable Integer taskID) {
         Todo todo = todoService.readTask(taskID);
         if (Objects.isNull(todo)) {
-            return new ResponseEntity<>(new ApiResponse(false, "Task not found"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         todoService.deleteTask(taskID);
-        return new ResponseEntity<>(new ApiResponse(true, "Task deleted successfully"), HttpStatus.OK);
+        List<Todo> todos = todoService.listTask();
+        return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
     @DeleteMapping("deleteAll")
-    public ResponseEntity<ApiResponse> deleteAllTasks() {
+    public ResponseEntity<List<Todo>> deleteAllTasks() {
         todoService.deleteAllTasks();
-        return new ResponseEntity<>(new ApiResponse(true, "All tasks deleted successfully"), HttpStatus.OK);
+        List<Todo> todos = todoService.listTask();
+        return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 }
