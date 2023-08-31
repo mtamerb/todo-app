@@ -22,7 +22,7 @@ public class Todo implements Serializable {
     private String task;
 
     @Column(name = "is_completed")
-    private Boolean completed = false;
+    private Boolean completed ;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
