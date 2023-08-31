@@ -27,6 +27,7 @@ public class TodoController {
     public ResponseEntity<List<Todo>> createTask(@Valid @RequestBody TodoDTO todoDTO) {
         Todo todo = new Todo();
         todo.setTask(todoDTO.getTask());
+        todo.setCompleted(false);
         todoService.createTask(todo);
         List<Todo> todos = todoService.listTask();
         return new ResponseEntity<>(todos, HttpStatus.OK);
