@@ -39,6 +39,14 @@ public class TodoService {
         }
     }
 
+    public void updateCheckStatus(Integer taskID,  Boolean completed){
+        Todo existingTodo = readTask(taskID);
+        if (existingTodo != null) {
+            existingTodo.setCompleted(completed);
+            iTodoRepository.save(existingTodo);
+        }
+    }
+
 
     public void deleteTask(Integer taskID) {
         iTodoRepository.deleteById(taskID);
