@@ -15,5 +15,7 @@ public class TodoDTO {
     @NotBlank(message = "Task cannot be empty")
     String task;
 
+    @NotBlank(message = "Completed cannot be empty")
+    Boolean completed;
 
 }
