@@ -1,7 +1,6 @@
 package com.tamerb.controller;
 
 import com.tamerb.assist.FrontEnd;
-import com.tamerb.config.ApiResponse;
 import com.tamerb.dto.TodoDTO;
 import com.tamerb.model.Todo;
 import com.tamerb.service.TodoService;
@@ -57,6 +56,19 @@ public class TodoController {
         todo.setTask(todoDTO.getTask());
         todoService.updateTask(taskID, todoDTO);
         return new ResponseEntity<>(todoService.listTask(), HttpStatus.OK);
+    }
+
+    @PutMapping("update/check/{taskID}/{completed}")
+    public ResponseEntity<List<Todo>> updateTask(@PathVariable Integer taskID, @PathVariable Boolean completed) {
+
+        Todo todo = todoService.readTask(taskID);
+        if (Objects.isNull(todo)) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        todo.setCompleted(completed);
+        todoService.updateCheckStatus(taskID, completed);
+        return new ResponseEntity<>(todoService.listTask(), HttpStatus.OK);
+
     }
 
     @DeleteMapping("delete/{taskID}")
