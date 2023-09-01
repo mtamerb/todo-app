@@ -4,7 +4,7 @@
 
 1. What we will build
 2. Tech Stack
-3. Create Project
+3. Use Project
 4. Package Structure
 5. Dependency
 6. API Test
@@ -13,11 +13,8 @@
 
 ## 1. What we will build
 
-Build a CRUD rest APIs using Spring boot, spring data JPA, Hibernate and MySQL database.
+Build a TODO APP using Spring boot, React,  spring data JPA, Hibernate and MySQL database.
 
-### RestApi Architecture
-![](https://www.altexsoft.com/media/2021/03/word-image.png)
-- [1]
 
 ### 2. Tech Stack
 
@@ -25,6 +22,7 @@ Build a CRUD rest APIs using Spring boot, spring data JPA, Hibernate and MySQL d
 
 - [Java](https://bell-sw.com/pages/downloads/) - Java is a powerful general-purpose programming language-
 - [Spring](https://spring.io) - The Spring Framework is an application framework and inversion of control container for the Java platform.
+- [React](https://react.dev/) - React is an open source javascript library for creating user interfaces.
 - [MySQL](https://dev.mysql.com/downloads/installer/) - MySQL Database is a client/server system that consists of a multithreaded SQL server that supports different back ends, several different client programs and libraries, administrative tools, and a wide range of application-programming interfaces (APIs).
 - [Jpa](https://spring.io/projects/spring-data-jpa) -The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java object and relational database.
 - [Maven](https://maven.apache.org) - Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
@@ -36,13 +34,28 @@ Build a CRUD rest APIs using Spring boot, spring data JPA, Hibernate and MySQL d
 
 </details>
 
-### 3. Create Project
+### 3. Use Project
 
-The simplest way is to use spring initializr for create spring boot app.
+1-The simplest way is to use clone this repository.
 
-> go :  https://start.spring.io  and generate .
+```sh
+git clone https://github.com/mtamerb/todo-app.git
+```
+2-Then navigate to the path where the todo project is located in the Terminal
+```sh
+cd todo-app
+```
+3- Configure database:
+go application properties file then :
 
-![](assets/spring.io.png)
+```sh
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/{your-schema}
+spring.datasource.username={your-username}
+spring.datasource.password={your-password}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
 
 ### 4. Package Structure
 
