@@ -112,60 +112,15 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 | `taskID` | `string` | **Required**. ID of the task to delete |
 
 
-
-
 ### 4. Package Structure
 
-![](assets/packages.png)
+![](src/main/resources/static/todo-structure.png)
 
 ### 5. Dependency 
 
-![](assets/maven.png)
+![](src/main/resources/static/todo-dependency.png)
 
 
-
-<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
-</dependencies>
-
-> pom.xml
-
-
-```sh
-spring.datasource.url=jdbc:mysql://localhost:3306/testdb
-
-spring.datasource.username=root
-
-spring.datasource.password=password
-
-spring.jpa.hibernate.ddl-auto=update
-```
-> application.properties
 ### 6. Api Test
 
 > go : https://www.postman.com
