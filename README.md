@@ -57,6 +57,63 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
 
+
+## API Reference
+
+#### Get all tasks
+
+```http
+  GET /api/list
+```
+
+
+#### Create a new task
+
+```http
+    POST /api/create
+```
+
+
+#### Update a task
+
+```http
+  PUT /api/update/{taskID}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `string` | **Required**. ID of the task to update |
+
+#### Mark a task (completed/uncompleted)
+
+```http
+  PUT /api/update/check/{taskID}/{completed}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `string` | **Required**.  ID of the task to be marked |
+| `completed` | `boolean` | **Required**. Status of the task (completed/uncompleted) |
+
+
+#### Delete All Tasks
+```http
+    DELETE /api/deleteAll
+```
+
+#### Delete Specific Tasks
+
+```http
+  DELETE /api/delete/{taskID}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `string` | **Required**. ID of the task to delete |
+
+
+
+
 ### 4. Package Structure
 
 ![](assets/packages.png)
