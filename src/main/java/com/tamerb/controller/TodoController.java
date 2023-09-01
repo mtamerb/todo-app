@@ -33,14 +33,6 @@ public class TodoController {
         return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
-    @GetMapping("read/{taskID}")
-    public ResponseEntity<Todo> readTask(@PathVariable Integer taskID) {
-        Todo todo = todoService.readTask(taskID);
-        if (Objects.isNull(todo)) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(todo, HttpStatus.OK);
-    }
 
     @GetMapping("/list")
     public ResponseEntity<List<Todo>> listTasks() {
