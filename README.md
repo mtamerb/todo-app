@@ -66,8 +66,7 @@
 1. What we will build
 2. Tech Stack
 3. Use Project
-4. Package Structure
-5. Dependency
+
 
 
 ## 1. What we will build
@@ -116,13 +115,6 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
 
-### 4. Package Structure
-
-![](src/main/resources/static/todo-structure.png)
-
-### 5. Dependency 
-
-![](src/main/resources/static/todo-dependency.png)
 
 
 
