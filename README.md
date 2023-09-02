@@ -70,8 +70,9 @@
 ### Table of Content🚀️
 
 1. What we will build
-2. Tech Stack
-3. Use Project
+2. Used Technologies
+3. Tech Stack
+4. Use Project
 
 
 
@@ -79,8 +80,17 @@
 
 Build a TODO APP using Spring boot, React,  spring data JPA, Hibernate and MySQL database.
 
+## 2. Requirements
 
-### 2. Tech Stack
+* Java 20
+* Spring Boot
+* NodeJS and NPM
+* MySql 8
+* Swagger
+* Intellij Idea Ultimate
+* VsCode
+
+### 3. Tech Stack
 
 <details>
 
@@ -98,7 +108,7 @@ Build a TODO APP using Spring boot, React,  spring data JPA, Hibernate and MySQL
 
 </details>
 
-### 3. Use Project
+### 4. Use Project
 
 1-The simplest way is to use clone this repository.
 
