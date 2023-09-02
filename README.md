@@ -1,4 +1,7 @@
-﻿## Spring Boot, React, MySQL, JPA, Hibernate TODO APP
+
+ ## Frontend : https://github.com/mtamerb/react-todo 
+ 
+ ## Spring Boot, React, MySQL, JPA, Hibernate TODO APP
 
 
 
@@ -61,7 +64,7 @@
 | `taskID` | `Integer` | **Required**. ID of the task to delete |
 
 
-## Frontend : https://github.com/mtamerb/react-todo 
+
 
 
 ### Table of Content🚀️
