@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class TodoAppApplication {
 
+    // Main
     public static void main(String[] args) {
 
         SpringApplication.run(TodoAppApplication.class, args);

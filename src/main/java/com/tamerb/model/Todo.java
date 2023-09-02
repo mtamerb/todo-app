@@ -13,17 +13,21 @@ import java.util.Date;
 @Table(name = "todo")
 public class Todo implements Serializable {
 
+    // ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    // Task
     @NotBlank(message = "Task cannot be empty")
     @Column(name = "task")
     private String task;
 
+    // Completed
     @Column(name = "is_completed")
     private Boolean completed ;
 
+    // System Date
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date systemDate;

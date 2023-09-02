@@ -23,6 +23,8 @@ public class TodoController {
 
     private final TodoService todoService;
 
+
+    // localhost:8080/api/create
     @PostMapping("create")
     public ResponseEntity<List<Todo>> createTask(@Valid @RequestBody TodoDTO todoDTO) {
         Todo todo = new Todo();
@@ -33,13 +35,14 @@ public class TodoController {
         return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
-
+    // localhost:8080/api/list
     @GetMapping("/list")
     public ResponseEntity<List<Todo>> listTasks() {
         List<Todo> todos = todoService.listTask();
         return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
+    // localhost:8080/api/update/{taskID}
     @PutMapping("update/{taskID}")
     public ResponseEntity<List<Todo>> updateTask(@PathVariable Integer taskID, @Valid @RequestBody TodoDTO todoDTO) {
         Todo todo = todoService.readTask(taskID);
@@ -51,6 +54,7 @@ public class TodoController {
         return new ResponseEntity<>(todoService.listTask(), HttpStatus.OK);
     }
 
+    // localhost:8080/api/update/check/{taskID}/{completed}
     @PutMapping("update/check/{taskID}/{completed}")
     public ResponseEntity<List<Todo>> updateTask(@PathVariable Integer taskID, @PathVariable Boolean completed) {
 
@@ -64,6 +68,7 @@ public class TodoController {
 
     }
 
+    // localhost:8080/api/delete/{taskID}
     @DeleteMapping("delete/{taskID}")
     public ResponseEntity<List<Todo>> deleteTask(@PathVariable Integer taskID) {
         Todo todo = todoService.readTask(taskID);
@@ -75,6 +80,7 @@ public class TodoController {
         return new ResponseEntity<>(todos, HttpStatus.OK);
     }
 
+    // localhost:8080/api/deleteAll
     @DeleteMapping("deleteAll")
     public ResponseEntity<List<Todo>> deleteAllTasks() {
         todoService.deleteAllTasks();
