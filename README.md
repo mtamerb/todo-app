@@ -1,26 +1,100 @@
-﻿## Spring Boot, MySQL, JPA, Hibernate Restful CRUD API
+
+ ## Frontend : https://github.com/mtamerb/react-todo 
+ 
+ ## Spring Boot, React, MySQL, JPA, Hibernate TODO APP
+
+
+
+## Preview
+
+![](src/main/resources/static/todo-preview.gif)
+
+
+## API Reference
+
+#### Get all tasks
+
+```http
+  GET /api/list
+```
+
+
+#### Create a new task
+
+```http
+  POST /api/create
+```
+
+
+#### Update a task
+
+```http
+  PUT /api/update/{taskID}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `Integer` | **Required**. ID of the task to update |
+
+#### Mark a task (completed/uncompleted)
+
+```http
+  PUT /api/update/check/{taskID}/{completed}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `Integer` | **Required**.  ID of the task to be marked |
+| `completed` | `boolean` | **Required**. Status of the task (completed/uncompleted) |
+
+
+#### Delete All Tasks
+```http
+  DELETE /api/deleteAll
+```
+
+#### Delete Specific Tasks
+
+```http
+  DELETE /api/delete/{taskID}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `taskID` | `Integer` | **Required**. ID of the task to delete |
+
+
+
+
 
 ### Table of Content🚀️
 
 1. What we will build
-2. Tech Stack
-3. Use Project
-4. Package Structure
-5. Dependency
-6. API Test
+2. Used Technologies
+3. Tech Stack
+4. Use Project
 
----
+
 
 ## 1. What we will build
 
 Build a TODO APP using Spring boot, React,  spring data JPA, Hibernate and MySQL database.
 
+## 2. Requirements
 
-### 2. Tech Stack
+* Java 20
+* Spring Boot
+* NodeJS and NPM
+* MySql 8
+* Swagger
+* Intellij Idea Ultimate
+* VsCode
+
+### 3. Tech Stack
 
 <details>
 
-- [Java](https://bell-sw.com/pages/downloads/) - Java is a powerful general-purpose programming language-
+- [Java](https://www.java.com/tr/) - Java is a powerful general-purpose programming language-
 - [Spring](https://spring.io) - The Spring Framework is an application framework and inversion of control container for the Java platform.
 - [React](https://react.dev/) - React is an open source javascript library for creating user interfaces.
 - [MySQL](https://dev.mysql.com/downloads/installer/) - MySQL Database is a client/server system that consists of a multithreaded SQL server that supports different back ends, several different client programs and libraries, administrative tools, and a wide range of application-programming interfaces (APIs).
@@ -34,7 +108,7 @@ Build a TODO APP using Spring boot, React,  spring data JPA, Hibernate and MySQL
 
 </details>
 
-### 3. Use Project
+### 4. Use Project
 
 1-The simplest way is to use clone this repository.
 
@@ -58,92 +132,10 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 
 
-## API Reference
-
-#### Get all tasks
-
-```http
-  GET /api/list
-```
 
 
-#### Create a new task
+## Authors
 
-```http
-    POST /api/create
-```
+- [@tamerb](https://github.com/mtamerb)
 
 
-#### Update a task
-
-```http
-  PUT /api/update/{taskID}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `taskID` | `string` | **Required**. ID of the task to update |
-
-#### Mark a task (completed/uncompleted)
-
-```http
-  PUT /api/update/check/{taskID}/{completed}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `taskID` | `string` | **Required**.  ID of the task to be marked |
-| `completed` | `boolean` | **Required**. Status of the task (completed/uncompleted) |
-
-
-#### Delete All Tasks
-```http
-    DELETE /api/deleteAll
-```
-
-#### Delete Specific Tasks
-
-```http
-  DELETE /api/delete/{taskID}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `taskID` | `string` | **Required**. ID of the task to delete |
-
-
-### 4. Package Structure
-
-![](src/main/resources/static/todo-structure.png)
-
-### 5. Dependency 
-
-![](src/main/resources/static/todo-dependency.png)
-
-
-### 6. Api Test
-
-> go : https://www.postman.com
-
-<details>
-
-![](assets/mainpage.png)
-
-![](assets/users1.png)
-
-![](assets/post.png)
-
-![](assets/users2.png)
-
-![](assets/del.png)
-
-![](assets/update.png)
-
-![](assets/users3.png)
-
-![](assets/mysql.png)
-
-</details>
-
-### References
-[1] https://hemant-jain-42745.medium.com/restful-api-a7a19ca387d0
