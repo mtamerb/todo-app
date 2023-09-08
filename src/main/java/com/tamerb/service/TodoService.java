@@ -1,6 +1,6 @@
 package com.tamerb.service;
 
-import com.tamerb.dto.TodoDTO;
+import com.tamerb.dto.TodoDto;
 import com.tamerb.model.Todo;
 import com.tamerb.repository.ITodoRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,11 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 
-@RequiredArgsConstructor
 @Service
-public class TodoService {
+public interface TodoService {
 
-    private final ITodoRepository iTodoRepository;
+/*    private final ITodoRepository iTodoRepository;
 
     // CREATE TASK SERVICE
     public void createTask(Todo todo) {
@@ -34,7 +33,7 @@ public class TodoService {
     }
 
     // UPDATE TASK SERVICE
-    public void updateTask(Integer taskID, TodoDTO todoDTO) {
+    public void updateTask(Integer taskID, TodoDto todoDTO) {
         Todo existingTodo = readTask(taskID);
         if (existingTodo != null) {
             existingTodo.setTask(todoDTO.getTask());
@@ -59,7 +58,30 @@ public class TodoService {
     // DELETE ALL TASKS SERVICE
     public void deleteAllTasks() {
         iTodoRepository.deleteAll();
-    }
+    }*/
+
+    // CREATE
+    void createTask(TodoDto todoDto);
+
+
+    // READ TASK
+    TodoDto readTask(Integer taskID);
+
+    // LİST TASKS
+    List<TodoDto> listTask();
+
+
+    //UPDATE TASK
+    void updateTask(Integer taskID, TodoDto todoDTO);
+
+    // UPDATE STATUS
+    void updateCheckStatus(Integer taskID, Boolean completed);
+
+    // DELETE TASK
+    void deleteTask(Integer taskID);
+
+    // DELETE ALL TASK
+    void deleteAllTasks();
 }
 
 

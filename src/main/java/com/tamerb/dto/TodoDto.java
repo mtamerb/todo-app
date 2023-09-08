@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
-public class TodoDTO {
+public class TodoDto {
 
     // ID
     @NotBlank(message = "ID cannot be empty")
@@ -21,4 +21,9 @@ public class TodoDTO {
     @NotBlank(message = "Completed cannot be empty")
     Boolean completed;
 
+    public TodoDto(Integer id, String task, Boolean completed) {
+        this.id = id;
+        this.task = task;
+        this.completed = completed;
+    }
 }
